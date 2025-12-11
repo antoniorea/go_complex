@@ -1,10 +1,10 @@
 /*    
     Este programa suma y resta dos numeros complejos en coord. polares
     los argumentos deben estar expresados en grados
-$ ./complex01_go 12.041 48.36 8.60 54.46 
+$ ./complex_go 12.041 48.36 8.60 54.46 
 
-z1 + z2 :       El modulo de z es :20.61 el argumento z en grados es :50.90     (13.00,16.00)
-z1 - z2 :       El modulo de z es :3.61 el argumento z en grados es :33.69      (3.00,2.00)
+z1 + z2 :  El modulo de z es :20.61 el argumento z en grados es :50.90  suma: 13.00, 16.00 j
+z1 - z2 :  El modulo de z es :3.61 el argumento z en grados es :33.69   resta: 3.00, 2.00 j
 */
 package main
 
@@ -35,12 +35,14 @@ func main() {
 	resta := z1 -z2
 
 	r1, theta1 := cmplx.Polar(suma)	
-	fmt.Printf("z1 + z2 :    El modulo de z es :%.2f el argumento z en grados es :%.2f\n",r1, theta1 * 180.0/math.Pi )
-	fmt.Printf("suma: %.2f, + %.2f j\n", real(suma), imag(suma))
+	fmt.Printf("z1 + z2 :  El modulo de z es :%.2f el argumento z en grados es :%.2f",r1, theta1 * 180.0/math.Pi )
+	//fmt.Printf("\tsuma: %.2f, %.2f j\n", real(suma), imag(suma))
+	fmt.Printf("\tz: %.2v \n", suma )
 
 	r2, theta2 := cmplx.Polar(resta)	
-	fmt.Printf("z1 - z2 :    El modulo de z es :%.2f el argumento z en grados es :%.2f\n",r2, theta2 * 180.0/math.Pi )
-	fmt.Printf("resta: %.2f, + %.2f j\n", real(resta), imag(resta))
+	fmt.Printf("z1 - z2 :  El modulo de z es :%.2f el argumento z en grados es :%.2f",r2, theta2 * 180.0/math.Pi )
+	//fmt.Printf("\tresta: %.2f, %.2f j\n", real(resta), imag(resta))
+	fmt.Printf("\tz: %.2v \n", resta )
 
 
 }
